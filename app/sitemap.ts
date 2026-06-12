@@ -1,14 +1,22 @@
 import type { MetadataRoute } from "next";
 
-const baseUrl = "https://www.jincijiance.com";
+import { seoPages, siteBaseUrl } from "@/lib/seo-pages";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [
+  const routes: MetadataRoute.Sitemap = [
     {
-      url: baseUrl,
+      url: siteBaseUrl,
       lastModified: new Date(),
-      changeFrequency: "weekly",
+      changeFrequency: "weekly" as const,
       priority: 1,
     },
+    ...seoPages.map((page) => ({
+      url: `${siteBaseUrl}/${page.slug}`,
+      lastModified: new Date(),
+      changeFrequency: "weekly" as const,
+      priority: 0.8,
+    })),
   ];
+
+  return routes;
 }
