@@ -13,6 +13,9 @@ export const metadata: Metadata = {
   keywords: "违禁词检测,电商违规词,淘宝违禁词,拼多多敏感词,抖音极限词,小红书违规词,广告法违禁词",
   verification: {
     google: "-oevWsa1EfZk1bg3tyxpcwvvHjLJL2_v8tkEfMDbieU",
+    other: {
+      "baidu-site-verification": "codeva-5I9Gx86XIi",
+    },
   },
 };
 
